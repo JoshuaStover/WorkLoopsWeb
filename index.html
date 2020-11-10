@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+		<title>Work Loops - A Productivity Prototype</title>
+		<link rel="stylesheet" href="css/workLoops.css" type="text/css"/>
+	</head>
+	<body class="bg-dark">
+		<div class="page-wrapper">
+			<div class="content tw">
+				<div class="row">
+					<img src="res/work.png" alt=""/>
+				</div>
+				<div class="row">
+					<div class="time-container">
+						<span id="minutes">0</span><span>:</span><span id="seconds">00</span>
+					</div>
+				</div>
+				<div class="row">
+					<form>
+						<div class="form-row">
+							<span>Work Minutes (15-60)</span>
+							<input class="slider" type="range" id="wms" min="15" max="60" step="1" value="30" oninput="wmi.value=this.value"/>
+							<input class="input-box" type="number" id="wmi" min="15" max="60" value="30" oninput="wms.value=this.value"/>
+						</div>
+						<div class="form-row">
+							<span>Short Break (3-15)</span>
+							<input class="slider" type="range" id="sbs" min="3" max="15" step="1" value="5" oninput="sbi.value=this.value"/>
+							<input class="input-box" type="number" id="sbi" min="3" max="15" value="5" oninput="sbs.value=this.value"/>
+						</div>
+						<div class="form-row">
+							<span>Long Break (10-30)</span>
+							<input class="slider" type="range" id="lbs" min="10" max="30" step="1" value="15" oninput="lbi.value=this.value"/>
+							<input class="input-box" type="number" id="lbi" min="10" max="30" value="15" oninput="lbs.value=this.value"/>
+						</div>
+						<div class="form-row">
+							<span>Work Loops Per Long Break (2-6)</span>
+							<input class="slider" type="range" id="lns" min="2" max="6" step="1" value="3" oninput="lni.value=this.value"/>
+							<input class="input-box" type="number" id="lni" min="2" max="6" value="3" oninput="lns.value=this.value"/>
+						</div>
+					</form>
+				</div>
+				<div class="form-row">
+					<button id="start">Start</button>
+					<button id="stop">Stop</button>
+					<button id="reset">Reset</button>
+				</div>
+				<div class="result-row">
+					<div>
+						<span>Work Loops Complete:&nbsp;</span><span id="pc">0</span>
+					</div>
+					<div>
+						<span>Short Breaks:&nbsp;</span><span id="sc">0</span>
+					</div>
+					<div>
+						<span>Long Breaks:&nbsp;</span><span id="lc">0</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+    <script src="js/WorkLoops.js"></script>
+</html>
